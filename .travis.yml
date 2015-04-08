@@ -1,2 +1,9 @@
 language: csharp
 solution: source/MasterDevs.Lib.sln
+
+install:
+  - nuget restore source/MasterDevs.Lib.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release source/MasterDevs.Lib.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe source/MasterDevs.Lib.Tests/bin/Debug/MasterDevs.Lib.Tests.dll
