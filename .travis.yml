@@ -6,4 +6,4 @@ install:
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release source/MasterDevs.Lib.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe source/MasterDevs.Lib.Tests/bin/Debug/MasterDevs.Lib.Tests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.dll
