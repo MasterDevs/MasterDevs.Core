@@ -11,9 +11,9 @@ namespace MasterDevs.Lib.Tests
     public class Class1
     {
         [Test]
-        public void Fail()
+        public void Pass()
         {
-            Assert.Fail();
+            Assert.Pass();
         }
     }
 }
