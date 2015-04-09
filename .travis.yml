@@ -7,3 +7,13 @@ install:
 script:
   - xbuild /p:Configuration=Release source/MasterDevs.Lib.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.dll
+
+deploy:
+  provider: releases
+  api_key: 28100f3bf94b716fbcffbf82ce7e3648a9988470
+  file: 
+    - source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.dll
+    - source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.pdb
+  skip_cleanup: true
+  on:
+    tags: true
