@@ -10,7 +10,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: 99f1b5c66017c00b693e1ea1a04931e6f086d664
+  api_key: 958b711549def95377b2dde2b1aa4697973a556f 
   file: 
     - source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.dll
     - source/MasterDevs.Lib.Tests/bin/Release/MasterDevs.Lib.Tests.pdb
