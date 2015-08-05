@@ -1,5 +1,3 @@
-# Great reference:  http://www.appveyor.com/docs/appveyor-yml
-
 version: 1.0.{build}
 skip_tags: false
 configuration: Release
