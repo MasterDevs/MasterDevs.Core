@@ -190,3 +190,6 @@ ModelManifest.xml
 
 # GhostDoc is VS documenting plugin
 *.GhostDoc.xml
+
+!source/MasterDevs.Lib/**
+!source/MasterDevs.Lib.Tests/**
