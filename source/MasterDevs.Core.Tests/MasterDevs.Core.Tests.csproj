@@ -7,8 +7,8 @@
     <ProjectGuid>{0C2DD7A9-DCEA-4409-9901-A7CCCA86A3F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MasterDevs.Lib.Tests</RootNamespace>
-    <AssemblyName>MasterDevs.Lib.Tests</AssemblyName>
+    <RootNamespace>MasterDevs.Core.Tests</RootNamespace>
+    <AssemblyName>MasterDevs.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
@@ -54,9 +56,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MasterDevs.Lib\MasterDevs.Lib.csproj">
+    <ProjectReference Include="..\MasterDevs.Core\MasterDevs.Core.csproj">
       <Project>{ce998aee-98e5-4bd6-be2b-484bda4e81c6}</Project>
-      <Name>MasterDevs.Lib</Name>
+      <Name>MasterDevs.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
