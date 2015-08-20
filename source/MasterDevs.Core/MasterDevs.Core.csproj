@@ -38,7 +38,7 @@
   <ItemGroup>
     <Compile Include="CodeContracts.cs" />
     <Compile Include="Error\UserVisibleException.cs" />
-    <Compile Include="Import\Extensions\ActionExtensions.cs" />
+    <Compile Include="System\Action.cs" />
     <Compile Include="Import\Extensions\ClassExtensions.cs" />
     <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
     <Compile Include="Import\Extensions\EnumerableExtensions.cs" />
@@ -80,8 +80,9 @@
     <Compile Include="Import\Utils\ThreadSafeFactoryCache.cs" />
     <Compile Include="Import\Utils\WebUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\Linq\IEnumerable.cs" />
-    <Compile Include="System\Linq\Object.cs" />
+    <Compile Include="System\EventHandlerExtensions.cs" />
+    <Compile Include="System\Linq\IEnumerableExtensions.cs" />
+    <Compile Include="System\Linq\ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MasterDevs.Core.nuspec" />

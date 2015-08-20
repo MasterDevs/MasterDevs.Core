@@ -1,8 +1,9 @@
 ﻿using MasterDevs.Core.Common.Infrastructure;
 using MasterDevs.Core.Common.Service;
+using System;
 using System.Diagnostics;
 
-namespace System
+namespace MasterDevs.Core.System
 {
     [DebuggerStepThrough]
     public static class ActionExtensions
@@ -43,35 +44,16 @@ namespace System
             me(arg1, arg2);
         }
 
-        public static void SafeInvoke(this EventHandler ev, object sender)
+        public static Action ToSafe(this Action me)
         {
-            ev.SafeInvoke(sender, EventArgs.Empty);
+            if (me == null) return () => { };
+            return me;
         }
 
-        public static void SafeInvoke(this EventHandler ev, object sender, EventArgs e)
+        public static Action<T> ToSafe<T>(this Action<T> me)
         {
-            if (null == ev)
-                return;
-
-            ev(sender, e);
-        }
-
-        public static void SafeInvoke<T>(this EventHandler<T> ev, object sender, T e)
-        {
-            if (null == ev)
-                return;
-
-            ev(sender, e);
-        }
-
-        public static Action Wrap(this Action me)
-        {
-            return (Action)(() => me.SafeInvoke());
-        }
-
-        public static Action<T> Wrap<T>(this Action<T> me)
-        {
-            return (Action<T>)(val => { me.SafeInvoke(val); });
+            if (me == null) return _ => { };
+            return me;
         }
     }
 }

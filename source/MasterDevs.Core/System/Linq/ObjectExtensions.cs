@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace MasterDevs.Core.System.Linq
 {
-    public static class Object
+    public static class ObjectExtensions
     {
         public static bool In<TSource>(this TSource value, IEnumerable<TSource> source)
         {

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDevs.Core.System.Linq
 {
-    public static class IEnumerable
+    public static class IEnumerableExtensions
     {
         /// <summary>
         /// Determines whether any element of a sequence satisfies a condition.
@@ -14,7 +12,7 @@ namespace MasterDevs.Core.System.Linq
         /// <param name="predicate">
         /// A function to test each element for a condition.
         /// </param>
-        /// 
+        ///
         /// <param name="source">
         /// An System.Collections.Generic.IEnumerable`1 whose elements to apply the predicate to.
         /// </param>
@@ -37,7 +35,7 @@ namespace MasterDevs.Core.System.Linq
         /// <param name="predicate">
         /// A function to test each element for a condition.
         /// </param>
-        /// 
+        ///
         /// <param name="source">
         /// An System.Collections.Generic.IEnumerable`1 whose elements to apply the predicate to.
         /// </param>
@@ -56,8 +54,5 @@ namespace MasterDevs.Core.System.Linq
         {
             return !source.Any(predicate);
         }
-
     }
 }
-
-

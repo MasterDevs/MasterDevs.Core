@@ -1,4 +1,6 @@
-﻿namespace System.Linq.Expressions
+﻿using MasterDevs.Core.System;
+
+namespace System.Linq.Expressions
 {
     public static class ExpressionExtensions
     {
