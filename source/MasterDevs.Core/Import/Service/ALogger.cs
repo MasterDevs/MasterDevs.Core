@@ -1,7 +1,7 @@
-﻿using MasterDevs.Lib.Import.Service;
+﻿using MasterDevs.Core.Import.Service;
 using System;
 
-namespace MasterDevs.Lib.Common.Service
+namespace MasterDevs.Core.Common.Service
 {
     public abstract class ALogger : ILogger
     {

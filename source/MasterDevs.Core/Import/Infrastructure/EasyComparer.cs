@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MasterDevs.Lib.Common.Infrastructure
+namespace MasterDevs.Core.Common.Infrastructure
 {
     /// <summary>
     /// Simple implementation of an <seealso cref="IComparer"/> which accepts a function on the constructor to convert the <typeparamref name="T"/> to an int

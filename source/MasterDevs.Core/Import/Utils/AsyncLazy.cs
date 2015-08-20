@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public class AsyncLazy<T> : Lazy<Task<T>>
     {

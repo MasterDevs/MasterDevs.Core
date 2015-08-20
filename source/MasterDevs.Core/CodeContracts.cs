@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Lib
+namespace MasterDevs.Core
 {
     public static class CodeContracts
     {

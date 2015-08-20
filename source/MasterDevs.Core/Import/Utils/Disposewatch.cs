@@ -1,8 +1,8 @@
-﻿using MasterDevs.Lib.Common.Infrastructure;
+﻿using MasterDevs.Core.Common.Infrastructure;
 using System;
 using Debug = System.Diagnostics.Debug;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public class Disposewatch : IDisposable
     {

@@ -1,5 +1,5 @@
 ﻿using System.IO;
-namespace MasterDevs.Lib.Common.Service
+namespace MasterDevs.Core.Common.Service
 {
     public interface ISerializer
     {

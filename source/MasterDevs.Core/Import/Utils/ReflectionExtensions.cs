@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public static class ReflectionExtensions
     {

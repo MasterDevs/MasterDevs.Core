@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace MasterDevs.Lib.Tests
+namespace MasterDevs.Core.Tests
 {
     [TestFixture]
     public class CodeContractsTests

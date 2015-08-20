@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public static class GuidEncoder
     {

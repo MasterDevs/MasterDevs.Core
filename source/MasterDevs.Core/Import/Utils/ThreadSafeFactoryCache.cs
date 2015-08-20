@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public class ThreadSafeFactoryCache<Tkey, Tvalue>
     {

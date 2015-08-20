@@ -1,5 +1,5 @@
-﻿using MasterDevs.Lib.Common.Infrastructure;
-using MasterDevs.Lib.Common.Service;
+﻿using MasterDevs.Core.Common.Infrastructure;
+using MasterDevs.Core.Common.Service;
 using System.Diagnostics;
 
 namespace System

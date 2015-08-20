@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     /// <summary>
     /// http://blogs.msdn.com/b/pfxteam/archive/2012/02/11/10266920.aspx

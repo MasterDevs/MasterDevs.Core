@@ -59,9 +59,9 @@ nuget:
   account_feed: true
   project_feed: true
 before_build:
-- nuget restore source\MasterDevs.Lib.sln
+- nuget restore source\MasterDevs.Core.sln
 build:
-  project: source\MasterDevs.Lib.sln
+  project: source\MasterDevs.Core.sln
   publish_nuget: true
   publish_nuget_symbols: true
   verbosity: minimal

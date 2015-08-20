@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MasterDevs.Lib.System.Linq
+namespace MasterDevs.Core.System.Linq
 {
     public static class IEnumerable
     {

@@ -84,7 +84,6 @@
     <Compile Include="System\Linq\Object.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Import\packages.config" />
     <None Include="MasterDevs.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -93,9 +92,6 @@
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\Analyzer1.1.0.0.0\tools\analyzers\Analyzer1.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

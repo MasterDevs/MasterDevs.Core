@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MasterDevs.Lib.Common.Infrastructure;
+using MasterDevs.Core.Common.Infrastructure;
 
 namespace System.Collections.ObjectModel
 {

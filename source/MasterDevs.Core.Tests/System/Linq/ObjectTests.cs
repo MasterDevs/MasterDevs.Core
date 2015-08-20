@@ -1,10 +1,10 @@
-﻿using MasterDevs.Lib.System.Linq;
+﻿using MasterDevs.Core.System.Linq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterDevs.Lib.Tests.System.Linq
+namespace MasterDevs.Core.Tests.System.Linq
 {
     [TestFixture]
     public class ObjectTests

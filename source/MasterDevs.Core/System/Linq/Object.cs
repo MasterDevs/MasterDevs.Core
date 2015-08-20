@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterDevs.Lib.System.Linq
+namespace MasterDevs.Core.System.Linq
 {
     public static class Object
     {

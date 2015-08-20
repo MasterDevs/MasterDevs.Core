@@ -1,8 +1,8 @@
-﻿using MasterDevs.Lib.Common.Infrastructure;
+﻿using MasterDevs.Core.Common.Infrastructure;
 using System;
 using System.Linq;
 
-namespace MasterDevs.Lib.Common.Service
+namespace MasterDevs.Core.Common.Service
 {
     public class CompoundLogger : ILogger
     {

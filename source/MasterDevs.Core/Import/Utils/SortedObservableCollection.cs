@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
-using MasterDevs.Lib.Common.Infrastructure;
+using MasterDevs.Core.Common.Infrastructure;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     [DebuggerDisplay("Count:  {Count}")]
     public class SortedObservableCollection<T> : ObservableCollection<T>

@@ -1,7 +1,7 @@
 ﻿using System;
-using MasterDevs.Lib.Common.Infrastructure;
+using MasterDevs.Core.Common.Infrastructure;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
     public class DisposeToggle : IDisposable
     {

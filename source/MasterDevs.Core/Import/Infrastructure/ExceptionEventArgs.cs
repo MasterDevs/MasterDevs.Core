@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Lib.Common.Infrastructure
+namespace MasterDevs.Core.Common.Infrastructure
 {
     public class ExceptionEventArgs : EventArgs
     {

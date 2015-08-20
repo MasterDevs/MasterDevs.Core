@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace MasterDevs.Lib.Common.Utils
+namespace MasterDevs.Core.Common.Utils
 {
 	static public class StringUtils
 	{

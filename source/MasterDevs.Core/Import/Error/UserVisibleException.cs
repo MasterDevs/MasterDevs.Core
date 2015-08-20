@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Lib.Common.Error
+namespace MasterDevs.Core.Common.Error
 {
     public class UserVisibleException : Exception
     {
