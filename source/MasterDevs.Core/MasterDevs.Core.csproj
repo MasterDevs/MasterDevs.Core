@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CodeContracts.cs" />
-    <Compile Include="Import\Error\UserVisibleException.cs" />
+    <Compile Include="Error\UserVisibleException.cs" />
     <Compile Include="Import\Extensions\ActionExtensions.cs" />
     <Compile Include="Import\Extensions\ClassExtensions.cs" />
     <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
