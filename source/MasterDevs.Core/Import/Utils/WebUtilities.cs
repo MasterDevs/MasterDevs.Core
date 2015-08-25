@@ -189,17 +189,17 @@ namespace MasterDevs.Core.Common.Utils
             return sb.ToString();
         }
 
-        public static Dictionary<string, string> JsonDecode(string encodedString)
-        {
-            var inputs = new Dictionary<string, string>();
-            var json = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, object>>(encodedString);
+        //public static Dictionary<string, string> JsonDecode(string encodedString)
+        //{
+        //    var inputs = new Dictionary<string, string>();
+        //    var json = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, object>>(encodedString);
 
-            foreach (var kv in json)
-            {
-                inputs[kv.Key] = json[kv.Key].ToString();
-            }
+        //    foreach (var kv in json)
+        //    {
+        //        inputs[kv.Key] = json[kv.Key].ToString();
+        //    }
 
-            return inputs;
-        }
+        //    return inputs;
+        //}
     }
 }
