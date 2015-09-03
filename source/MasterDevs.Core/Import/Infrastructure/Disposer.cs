@@ -1,5 +1,4 @@
-﻿using MasterDevs.Core.System;
-using System;
+﻿using System;
 
 namespace MasterDevs.Core.Common.Infrastructure
 {

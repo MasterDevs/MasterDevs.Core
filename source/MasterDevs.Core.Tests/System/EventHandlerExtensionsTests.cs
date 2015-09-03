@@ -1,5 +1,4 @@
 ﻿using MasterDevs.Core.Common.Infrastructure;
-using MasterDevs.Core.System;
 using NUnit.Framework;
 using System;
 

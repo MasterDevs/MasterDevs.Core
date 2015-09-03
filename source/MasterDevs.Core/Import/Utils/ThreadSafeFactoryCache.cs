@@ -1,5 +1,4 @@
-﻿using MasterDevs.Core.System;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,6 +8,19 @@ namespace MasterDevs.Core.Common.Utils
     {
         private readonly Dictionary<Tkey, Tvalue> _cache = new Dictionary<Tkey, Tvalue>();
         private readonly object _lock = new object();
+
+        public Tvalue[] Values
+        {
+            get { return _cache.Values.ToArray(); }
+        }
+
+        public Tvalue this[Tkey key]
+        {
+            set
+            {
+                Set(key, value);
+            }
+        }
 
         public Tvalue Get(Tkey key)
         {
@@ -64,19 +76,6 @@ namespace MasterDevs.Core.Common.Utils
             if (needsUpdate)
                 update.SafeInvoke(value);
             return value;
-        }
-
-        public Tvalue this[Tkey key]
-        {
-            set
-            {
-                Set(key, value);
-            }
-        }
-
-        public Tvalue[] Values
-        {
-            get { return _cache.Values.ToArray(); }
         }
     }
 }

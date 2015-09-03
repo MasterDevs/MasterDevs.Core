@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Core.System
+namespace System
 {
     public static class EventHandlerExtensions
     {

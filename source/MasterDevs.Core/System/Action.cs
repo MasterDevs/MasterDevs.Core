@@ -3,7 +3,7 @@ using MasterDevs.Core.Common.Service;
 using System;
 using System.Diagnostics;
 
-namespace MasterDevs.Core.System
+namespace System
 {
     [DebuggerStepThrough]
     public static class ActionExtensions
