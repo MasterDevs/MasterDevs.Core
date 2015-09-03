@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace System.Linq
 {
     public static class IEnumerableExtensions
     {
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
+        {
+            if (source == null) return true;
+            return !source.Any();
+        }
+
         /// <summary>
         /// Determines whether any element of a sequence satisfies a condition.
         /// </summary>
@@ -53,6 +57,12 @@ namespace System.Linq
         public static bool None<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
         {
             return !source.Any(predicate);
+        }
+
+        public static int SafeCount<T>(this IEnumerable<T> source)
+        {
+            if (source == null) return 0;
+            return source.Count();
         }
     }
 }

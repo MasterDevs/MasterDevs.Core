@@ -9,6 +9,45 @@ namespace MasterDevs.Core.Tests.System.Linq
     public class IEnumerableTests
     {
         [Test]
+        public void IsNullOrEmpty_IsEmpty_ReturnsTrue()
+        {
+            // Assemble
+            var enumerable = new List<int>();
+
+            // Act
+            var actual = enumerable.IsNullOrEmpty();
+
+            // Assert
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
+        public void IsNullOrEmpty_IsNotEmpty_ReturnsFalse()
+        {
+            // Assemble
+            var enumerable = new List<int> { 1 };
+
+            // Act
+            var actual = enumerable.IsNullOrEmpty();
+
+            // Assert
+            Assert.IsFalse(actual);
+        }
+
+        [Test]
+        public void IsNullOrEmpty_IsNull_ReturnsTrue()
+        {
+            // Assemble
+            IEnumerable<int> enumerable = null;
+
+            // Act
+            var actual = enumerable.IsNullOrEmpty();
+
+            // Assert
+            Assert.IsTrue(actual);
+        }
+
+        [Test]
         public void None_EmptyEnumerable_ReturnsTrue()
         {
             // Assemble
@@ -74,6 +113,45 @@ namespace MasterDevs.Core.Tests.System.Linq
 
             // Assert
             Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void SafeCount_IsEmpty_ReturnsZero()
+        {
+            // Assemble
+            var enumerable = new List<int>();
+
+            // Act
+            var actual = enumerable.SafeCount();
+
+            // Assert
+            Assert.AreEqual(0, actual);
+        }
+
+        [Test]
+        public void SafeCount_IsNotEmpty_ReturnsFalse()
+        {
+            // Assemble
+            var enumerable = new List<int> { 1 };
+
+            // Act
+            var actual = enumerable.SafeCount();
+
+            // Assert
+            Assert.AreEqual(1, actual);
+        }
+
+        [Test]
+        public void SafeCount_IsNull_ReturnsTrue()
+        {
+            // Assemble
+            IEnumerable<int> enumerable = null;
+
+            // Act
+            var actual = enumerable.SafeCount();
+
+            // Assert
+            Assert.AreEqual(0, actual);
         }
     }
 }

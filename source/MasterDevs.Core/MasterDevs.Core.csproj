@@ -41,7 +41,6 @@
     <Compile Include="System\Action.cs" />
     <Compile Include="System\ClassExtensions.cs" />
     <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
-    <Compile Include="Import\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Import\Extensions\ExpressionExtensions.cs" />
     <Compile Include="Import\Extensions\LinqExtensions.cs" />
     <Compile Include="Import\Extensions\NullableExtensions.cs" />
