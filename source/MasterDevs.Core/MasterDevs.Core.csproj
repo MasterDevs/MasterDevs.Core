@@ -39,7 +39,7 @@
     <Compile Include="CodeContracts.cs" />
     <Compile Include="Error\UserVisibleException.cs" />
     <Compile Include="System\Action.cs" />
-    <Compile Include="Import\Extensions\ClassExtensions.cs" />
+    <Compile Include="System\ClassExtensions.cs" />
     <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
     <Compile Include="Import\Extensions\EnumerableExtensions.cs" />
     <Compile Include="Import\Extensions\ExpressionExtensions.cs" />
