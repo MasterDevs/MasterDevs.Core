@@ -47,7 +47,7 @@
     <Compile Include="Import\Extensions\PagingExtensions.cs" />
     <Compile Include="Import\Extensions\StreamExtensions.cs" />
     <Compile Include="System\StringExtensions.cs" />
-    <Compile Include="Import\Extensions\TimeSpanExtensions.cs" />
+    <Compile Include="System\TimeSpanExtensions.cs" />
     <Compile Include="Import\Infrastructure\CodeContract.cs" />
     <Compile Include="Import\Infrastructure\Disposer.cs" />
     <Compile Include="Import\Infrastructure\EasyComparer.cs" />

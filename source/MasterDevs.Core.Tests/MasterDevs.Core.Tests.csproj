@@ -59,6 +59,7 @@
     <Compile Include="System\ObjectTests.cs" />
     <Compile Include="System\NullableExtensionsTests.cs" />
     <Compile Include="System\StringExtensionsTests.cs" />
+    <Compile Include="System\TimeSpanExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
