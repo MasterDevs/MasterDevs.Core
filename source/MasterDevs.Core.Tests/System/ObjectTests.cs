@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterDevs.Core.Tests.System.Linq
+namespace MasterDevs.Core.Tests.System
 {
     [TestFixture]
     public class ObjectTests
@@ -72,6 +72,18 @@ namespace MasterDevs.Core.Tests.System.Linq
         public void In_SourceIsNullAndComparerSpecified_Throws()
         {
             5.In(null, EqualityComparer<int>.Default);
+        }
+
+        [Test]
+        [TestCase(null, "me was null", "me was null")]
+        [TestCase("object not null", "me was null", "object not null")]
+        public void ToStringSafe(object me, string defaultValue, string expected)
+        {
+            // Act
+            var actual = me.ToStringSafe(defaultValue);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }

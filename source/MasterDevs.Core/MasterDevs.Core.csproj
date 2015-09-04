@@ -79,8 +79,8 @@
     <Compile Include="Import\Utils\WebUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EventHandlerExtensions.cs" />
-    <Compile Include="System\Linq\IEnumerableExtensions.cs" />
-    <Compile Include="System\Linq\ObjectExtensions.cs" />
+    <Compile Include="System\IEnumerableExtensions.cs" />
+    <Compile Include="System\ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MasterDevs.Core.nuspec" />

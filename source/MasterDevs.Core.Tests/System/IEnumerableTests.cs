@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MasterDevs.Core.Tests.System.Linq
+namespace MasterDevs.Core.Tests.System
 {
     [TestFixture]
     public class IEnumerableTests
