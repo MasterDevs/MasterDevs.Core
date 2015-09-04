@@ -56,6 +56,7 @@
     <Compile Include="System\EventHandlerExtensionsTests.cs" />
     <Compile Include="System\Linq\IEnumerableTests.cs" />
     <Compile Include="System\Linq\ObjectTests.cs" />
+    <Compile Include="System\NullableExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

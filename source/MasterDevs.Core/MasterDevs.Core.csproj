@@ -43,7 +43,7 @@
     <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
     <Compile Include="Import\Extensions\ExpressionExtensions.cs" />
     <Compile Include="Import\Extensions\LinqExtensions.cs" />
-    <Compile Include="Import\Extensions\NullableExtensions.cs" />
+    <Compile Include="System\NullableExtensions.cs" />
     <Compile Include="Import\Extensions\ObservableCollectionExtensions.cs" />
     <Compile Include="Import\Extensions\PagingExtensions.cs" />
     <Compile Include="Import\Extensions\ParsingExtensions.cs" />
