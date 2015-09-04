@@ -179,6 +179,19 @@ namespace MasterDevs.Core.Tests.System
         }
 
         [Test]
+        public void ToSafe_ActionIsNotNull_RunningReturnedActionRuns()
+        {
+            // Assemble
+            bool called = false;
+            Action act = () => called = true;
+
+            // Act
+            act.ToSafe()();
+
+            // Assert
+            Assert.IsTrue(called);
+        }
+        [Test]
         public void ToSafe_ActionIsNull_ReturnsNonNullAction()
         {
             // Assemble
