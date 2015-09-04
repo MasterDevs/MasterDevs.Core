@@ -9,6 +9,130 @@ namespace MasterDevs.Core.Tests.System
     public class IEnumerableTests
     {
         [Test]
+        public void FirstOrDefault_EmptyList_ReturnsDefault()
+        {
+            // Assemble
+            var source = Enumerable.Empty<string>();
+
+            // Act
+            var actual = source.FirstOrDefault("a");
+
+            // Assert
+            Assert.AreEqual("a", actual);
+        }
+
+        [Test]
+        public void FirstOrDefault_EmptyListDefaultIsNull_ReturnsNull()
+        {
+            // Assemble
+            var source = Enumerable.Empty<string>();
+
+            // Act
+            var actual = source.FirstOrDefault((string)null);
+
+            // Assert
+            Assert.IsNull(actual);
+        }
+
+        [Test]
+        public void FirstOrDefault_ListContainsElements_ReturnsFirstElementInList()
+        {
+            // Assemble
+            var source = new List<string> { "a", "b" };
+
+            // Act
+            var actual = source.FirstOrDefault("c");
+
+            // Assert
+            Assert.AreEqual("a", actual);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void FirstOrDefault_NullSource_Throws()
+        {
+            // Assemble
+            IEnumerable<string> source = null;
+
+            // Act
+            source.FirstOrDefault("a");
+        }
+
+        [Test]
+        public void FirstOrDefaultWithPredicate_EmptyList_ReturnsDefault()
+        {
+            // Assemble
+            var source = Enumerable.Empty<string>();
+
+            // Act
+            var actual = source.FirstOrDefault(_ => true, "a");
+
+            // Assert
+            Assert.AreEqual("a", actual);
+        }
+
+        [Test]
+        public void FirstOrDefaultWithPredicate_EmptyListDefaultIsNull_ReturnsNull()
+        {
+            // Assemble
+            var source = Enumerable.Empty<string>();
+
+            // Act
+            var actual = source.FirstOrDefault(_ => true, (string)null);
+
+            // Assert
+            Assert.IsNull(actual);
+        }
+
+        [Test]
+        public void FirstOrDefaultWithPredicate_ListContainsElements_ReturnsFirstElementInListThatPassesPredicate()
+        {
+            // Assemble
+            var source = new List<string> { "a", "b" };
+
+            // Act
+            var actual = source.FirstOrDefault(s => s == "b", "c");
+
+            // Assert
+            Assert.AreEqual("b", actual);
+        }
+
+        [Test]
+        public void FirstOrDefaultWithPredicate_ListContainsNoElementsThatPassPredicate_ReturnsDefault()
+        {
+            // Assemble
+            var source = new List<string> { "a", "b" };
+
+            // Act
+            var actual = source.FirstOrDefault(_ => false, "c");
+
+            // Assert
+            Assert.AreEqual("c", actual);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void FirstOrDefaultWithPredicate_NullPredicate_Throws()
+        {
+            // Assemble
+            var source = new List<string> { "a" };
+
+            // Act
+            source.FirstOrDefault(null, "a");
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void FirstOrDefaultWithPredicate_NullSource_Throws()
+        {
+            // Assemble
+            IEnumerable<string> source = null;
+
+            // Act
+            source.FirstOrDefault(_ => true, "a");
+        }
+
+        [Test]
         public void IsNullOrEmpty_IsEmpty_ReturnsTrue()
         {
             // Assemble
@@ -51,7 +175,7 @@ namespace MasterDevs.Core.Tests.System
         public void None_EmptyEnumerable_ReturnsTrue()
         {
             // Assemble
-            IEnumerable<int> enumerable = Enumerable.Empty<int>();
+            var enumerable = Enumerable.Empty<int>();
 
             // Act/Assert
             Assert.IsTrue(enumerable.None());
@@ -61,7 +185,7 @@ namespace MasterDevs.Core.Tests.System
         public void None_NonEmptyEnumerable_ReturnsFalse()
         {
             // Assemble
-            IEnumerable<int> enumerable = Enumerable.Range(0, 10);
+            var enumerable = Enumerable.Range(0, 10);
 
             // Act/Assert
             Assert.IsFalse(enumerable.None());
@@ -83,7 +207,7 @@ namespace MasterDevs.Core.Tests.System
         public void None_NullPredicate_Throws()
         {
             // Assemble
-            IEnumerable<int> enumerable = Enumerable.Range(0, 10);
+            var enumerable = Enumerable.Range(0, 10);
 
             // Act
             var result = enumerable.None(null);
@@ -93,7 +217,7 @@ namespace MasterDevs.Core.Tests.System
         public void None_PredicateAlwaysReturnsFalse_ReturnsTrue()
         {
             // Assemble
-            IEnumerable<int> enumerable = Enumerable.Range(0, 10);
+            var enumerable = Enumerable.Range(0, 10);
 
             // Act
             var result = enumerable.None(_ => false);
@@ -106,7 +230,7 @@ namespace MasterDevs.Core.Tests.System
         public void None_PredicateAlwaysReturnsTrue_ReturnsFalse()
         {
             // Assemble
-            IEnumerable<int> enumerable = Enumerable.Range(0, 10);
+            var enumerable = Enumerable.Range(0, 10);
 
             // Act
             var result = enumerable.None(_ => true);
