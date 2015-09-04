@@ -46,7 +46,6 @@
     <Compile Include="System\NullableExtensions.cs" />
     <Compile Include="Import\Extensions\ObservableCollectionExtensions.cs" />
     <Compile Include="Import\Extensions\PagingExtensions.cs" />
-    <Compile Include="Import\Extensions\ParsingExtensions.cs" />
     <Compile Include="Import\Extensions\StreamExtensions.cs" />
     <Compile Include="System\StringExtensions.cs" />
     <Compile Include="Import\Extensions\TimeSpanExtensions.cs" />
