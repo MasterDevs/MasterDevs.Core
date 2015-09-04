@@ -19,7 +19,9 @@ namespace System
         {
             if (null == value)
             {
-                return null == defaultValue ? string.Empty : defaultValue;
+                return null == defaultValue 
+                    ? string.Empty 
+                    : defaultValue;
             }
 
             return value.ToString();

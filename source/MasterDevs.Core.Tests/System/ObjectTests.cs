@@ -76,6 +76,7 @@ namespace MasterDevs.Core.Tests.System
 
         [Test]
         [TestCase(null, "me was null", "me was null")]
+        [TestCase(null, null, "")]
         [TestCase("object not null", "me was null", "object not null")]
         public void ToStringSafe(object me, string defaultValue, string expected)
         {

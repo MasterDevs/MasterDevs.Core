@@ -40,7 +40,7 @@
     <Compile Include="Error\UserVisibleException.cs" />
     <Compile Include="System\Action.cs" />
     <Compile Include="System\ClassExtensions.cs" />
-    <Compile Include="Import\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="System\Collection\Generic\IDictionaryExtensions.cs" />
     <Compile Include="Import\Extensions\ExpressionExtensions.cs" />
     <Compile Include="System\NullableExtensions.cs" />
     <Compile Include="Import\Extensions\ObservableCollectionExtensions.cs" />
@@ -65,9 +65,7 @@
     <Compile Include="Import\Utils\AsyncManualResetEvent.cs" />
     <Compile Include="Import\Utils\DisposeToggle.cs" />
     <Compile Include="Import\Utils\Disposewatch.cs" />
-    <Compile Include="Import\Utils\EnumUtils.cs" />
     <Compile Include="Import\Utils\FilteredSortedObservableCollection.cs" />
-    <Compile Include="Import\Utils\GuidEncoder.cs" />
     <Compile Include="Import\Utils\ImgurHelper.cs" />
     <Compile Include="Import\Utils\InMemoryByteArrayCache.cs" />
     <Compile Include="Import\Utils\ReflectionExtensions.cs" />
