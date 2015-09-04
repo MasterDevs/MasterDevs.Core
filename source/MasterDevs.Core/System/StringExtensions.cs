@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Linq;
 
 namespace System
 {
@@ -34,14 +32,6 @@ namespace System
         public static long ToLongSafe(this string me, long defaultValue = 0)
         {
             return SafeParse(me, long.TryParse, defaultValue);
-        }
-
-        public static string ToStringSafe(this object value, string valueIfNull = @"")
-        {
-            if (null == value)
-                return null == valueIfNull ? string.Empty : valueIfNull;
-
-            return value.ToString();
         }
 
         public static string TrimSafe(this string me)
