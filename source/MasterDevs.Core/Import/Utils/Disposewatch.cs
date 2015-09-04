@@ -1,58 +1,46 @@
-﻿using MasterDevs.Core.Common.Infrastructure;
+﻿using MasterDevs.Core.Common.Service;
 using System;
-using Debug = System.Diagnostics.Debug;
+using System.Diagnostics;
 
 namespace MasterDevs.Core.Common.Utils
 {
     public class Disposewatch : IDisposable
     {
-        private const string DEFAULT_Message = @"Finished ";
-        private readonly DateTime _startTime = DateTime.Now;
-        private readonly string Message;
-        private readonly Action<TimeSpan> OnFinished;
-        private readonly Action<string> OnFinishedMessage;
-        private bool isDisposed = false;
+        private const string DEFAULT_MESSAGE = @"Finished ";
 
-        private Disposewatch(string message, Action<string> onFinishedMessage, Action<TimeSpan> onFinished = null)
+        private readonly Action<TimeSpan> _onFinished;
+        private bool _isDisposed = false;
+        private Stopwatch _watch;
+
+        private Disposewatch(Action<TimeSpan> onFinished)
         {
-            Message = CodeContract.RequireNotNull(message, "message");
-            OnFinishedMessage = CodeContract.RequireNotNull(onFinishedMessage, "onFinishedMessage");
-            OnFinished = onFinished;
-            Duration = TimeSpan.Zero;
+            _onFinished = onFinished.RequireNotNull("onFinished");
+            _watch = Stopwatch.StartNew();
         }
 
-        public TimeSpan Duration { get; private set; }
-
-        private static Action<string> DefaultMessageAction
+        public static Disposewatch Start(string message = DEFAULT_MESSAGE)
         {
-            get { return (Action<string>)((s) => Debug.WriteLine(s)); }
+            return new Disposewatch(e => Debug.WriteLine("{0 }{1}", message, e));
         }
 
-        public static Disposewatch Start(string message = DEFAULT_Message)
+        public static Disposewatch Start(ILogger logger, string message = DEFAULT_MESSAGE)
         {
-            return new Disposewatch(message, DefaultMessageAction);
-        }
-
-        public static Disposewatch Start(Action<string> onFinishedMessage, string message = DEFAULT_Message)
-        {
-            return new Disposewatch(message, onFinishedMessage);
+            return new Disposewatch(e => logger.Debug("{0 }{1}", message, e));
         }
 
         public static Disposewatch StartTimeSpan(Action<TimeSpan> onFinished)
         {
-            return new Disposewatch(DEFAULT_Message, msg => { }, onFinished);
+            return new Disposewatch(onFinished);
         }
 
         public void Dispose()
         {
-            if (isDisposed) return;
-            isDisposed = true;
+            if (_isDisposed) return;
+            _isDisposed = true;
 
-            var stopTime = DateTime.Now;
-            Duration = stopTime - _startTime;
+            _watch.Stop();
 
-            OnFinished.SafeInvoke(Duration);
-            OnFinishedMessage.SafeInvoke(string.Format(@"{0}{1}", Message, Duration));
+            _onFinished.SafeInvoke(_watch.Elapsed);
         }
     }
 }
