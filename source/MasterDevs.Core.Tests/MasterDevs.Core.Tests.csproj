@@ -57,6 +57,7 @@
     <Compile Include="System\Linq\IEnumerableTests.cs" />
     <Compile Include="System\Linq\ObjectTests.cs" />
     <Compile Include="System\NullableExtensionsTests.cs" />
+    <Compile Include="System\StringExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

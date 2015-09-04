@@ -8,44 +8,12 @@ namespace System
     {
         private delegate bool DaConverter<T>(string input, out T output);
 
-        public static string Coalesce(this string me, params string[] them)
+        public static string Coalesce(this string me, params string[] backups)
         {
             if (!string.IsNullOrWhiteSpace(me)) return me;
-            if (them == null) return null;
+            if (backups == null) return null;
 
-            return them.FirstOrDefault(s => !string.IsNullOrWhiteSpace(s));
-        }
-
-        public static Dictionary<string, string> QueryString(this string query)
-        {
-            var items = new Dictionary<string, string>();
-
-            if (string.IsNullOrEmpty(query)) return items;
-
-            try
-            {
-                var idx = query.IndexOf(@"?") + 1;
-                if (query.Length > idx)
-                    query = query.Substring(idx);
-
-                query = WebUtility.UrlDecode(query);
-
-                var pairs = query.Split('&');
-
-                foreach (var pair in pairs)
-                {
-                    var keyValue = pair.Split('=');
-                    if (keyValue.Length == 2)
-                    {
-                        var key = keyValue[0];
-                        var val = keyValue[1];
-                        items.Add(key, val);
-                    }
-                }
-            }
-            catch { }
-
-            return items;
+            return backups.FirstOrDefault(s => !string.IsNullOrWhiteSpace(s));
         }
 
         public static bool ToBoolSafe(this string me, bool defaultValue = false)
@@ -88,7 +56,9 @@ namespace System
 
             var v = defaultValue;
             if (convert(me, out v))
+            {
                 return v;
+            }
             return defaultValue;
         }
     }
