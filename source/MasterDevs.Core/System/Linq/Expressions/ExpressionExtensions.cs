@@ -1,9 +1,13 @@
-﻿namespace System.Linq.Expressions
+﻿using MasterDevs.Core;
+
+namespace System.Linq.Expressions
 {
+#warning More Tests Required.
     public static class ExpressionExtensions
     {
         public static string GetPropertyName<T>(this Expression<Func<T>> exp)
         {
+            exp.RequireNotNull("exp");
             MemberExpression body = exp.Body as MemberExpression;
 
             if (body == null)
@@ -17,6 +21,7 @@
 
         public static string GetPropertyName<T, V>(this Expression<Func<T, V>> exp)
         {
+            exp.RequireNotNull("exp");
             MemberExpression body = exp.Body as MemberExpression;
 
             if (body == null)

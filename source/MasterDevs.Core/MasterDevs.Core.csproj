@@ -41,7 +41,7 @@
     <Compile Include="System\Action.cs" />
     <Compile Include="System\ClassExtensions.cs" />
     <Compile Include="System\Collection\Generic\IDictionaryExtensions.cs" />
-    <Compile Include="Import\Extensions\ExpressionExtensions.cs" />
+    <Compile Include="System\Linq\Expressions\ExpressionExtensions.cs" />
     <Compile Include="System\NullableExtensions.cs" />
     <Compile Include="Import\Extensions\ObservableCollectionExtensions.cs" />
     <Compile Include="Import\Extensions\StreamExtensions.cs" />
