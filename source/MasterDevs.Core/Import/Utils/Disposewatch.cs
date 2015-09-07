@@ -1,5 +1,4 @@
-﻿using MasterDevs.Core.Common.Service;
-using System;
+﻿using System;
 using System.Diagnostics;
 
 namespace MasterDevs.Core.Common.Utils
@@ -21,11 +20,6 @@ namespace MasterDevs.Core.Common.Utils
         public static Disposewatch Start(string message = DEFAULT_MESSAGE)
         {
             return new Disposewatch(e => Debug.WriteLine("{0 }{1}", message, e));
-        }
-
-        public static Disposewatch Start(ILogger logger, string message = DEFAULT_MESSAGE)
-        {
-            return new Disposewatch(e => logger.Debug("{0 }{1}", message, e));
         }
 
         public static Disposewatch StartTimeSpan(Action<TimeSpan> onFinished)

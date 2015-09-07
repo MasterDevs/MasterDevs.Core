@@ -1,6 +1,4 @@
-﻿using MasterDevs.Core.Common.Service;
-using Moq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 
 namespace MasterDevs.Core.Tests.System
@@ -8,64 +6,6 @@ namespace MasterDevs.Core.Tests.System
     [TestFixture]
     public class ActionTests
     {
-        private Mock<ILogger> _mockLogger;
-
-        #region SetUp
-
-        [SetUp]
-        public void SetUp()
-        {
-            _mockLogger = new Mock<ILogger>();
-        }
-
-        #endregion
-
-        [Test]
-        public void SafeCatchInvoke_ActionRuns_ActionRuns()
-        {
-            // Assemble
-            bool ran = false;
-            Action act = () => { ran = true; };
-
-            // Act
-            act.SafeCatchInvoke(_mockLogger.Object);
-
-            // Assert
-            Assert.IsTrue(ran);
-        }
-
-        [Test]
-        public void SafeCatchInvoke_ActionThrows_LoggsException()
-        {
-            // Assemble
-            var ex = new Exception();
-            Action act = () => { throw ex; };
-
-            // Act
-            act.SafeCatchInvoke(_mockLogger.Object);
-
-            // Assert
-            _mockLogger.Verify(l => l.Error(ex), Times.Once());
-        }
-
-        [Test]
-        public void SafeCatchInvoke_NullAction_DoesNothing()
-        {
-            // Act
-            ActionExtensions.SafeCatchInvoke(null, _mockLogger.Object);
-
-            // Assert
-            _mockLogger.Verify(l => l.Error(It.IsAny<Exception>()), Times.Never());
-        }
-
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException), ExpectedMessage = "logger", MatchType = MessageMatch.Contains)]
-        public void SafeCatchInvoke_NullLogger_Throws()
-        {
-            // Act
-            ActionExtensions.SafeCatchInvoke(new Action(() => { }), null);
-        }
-
         [Test]
         public void SafeInvoke_ActionIsNull_RunningActionDoesNothing()
         {

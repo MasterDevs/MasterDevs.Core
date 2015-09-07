@@ -50,14 +50,6 @@
     <Compile Include="Import\Infrastructure\EasyComparer.cs" />
     <Compile Include="Import\Infrastructure\EventArgs.cs" />
     <Compile Include="Import\Infrastructure\ExceptionEventArgs.cs" />
-    <Compile Include="Import\Service\ALogger.cs" />
-    <Compile Include="Import\Service\CompoundLogger.cs" />
-    <Compile Include="Import\Service\GenericLogger.cs" />
-    <Compile Include="Import\Service\ILogger.cs" />
-    <Compile Include="Import\Service\ISerializer.cs" />
-    <Compile Include="Import\Service\JSonSerializer.cs" />
-    <Compile Include="Import\Service\LogLevel.cs" />
-    <Compile Include="Import\Service\NullLogger.cs" />
     <Compile Include="Import\Utils\AsyncLazy.cs" />
     <Compile Include="Import\Utils\AsyncManualResetEvent.cs" />
     <Compile Include="Import\Utils\DisposeToggle.cs" />

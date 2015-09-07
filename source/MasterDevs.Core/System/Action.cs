@@ -1,27 +1,10 @@
-﻿using MasterDevs.Core;
-using MasterDevs.Core.Common.Service;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace System
 {
     [DebuggerStepThrough]
     public static class ActionExtensions
     {
-        public static void SafeCatchInvoke(this Action me, ILogger logger)
-        {
-            if (null == me) return;
-            logger.RequireNotNull("logger");
-
-            try
-            {
-                me();
-            }
-            catch (Exception e)
-            {
-                logger.Error(e);
-            }
-        }
-
         public static void SafeInvoke(this Action me)
         {
             if (null == me) return;
