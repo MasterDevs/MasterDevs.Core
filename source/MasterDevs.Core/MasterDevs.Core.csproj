@@ -62,14 +62,9 @@
     <Compile Include="Import\Utils\AsyncManualResetEvent.cs" />
     <Compile Include="Import\Utils\DisposeToggle.cs" />
     <Compile Include="Import\Utils\Disposewatch.cs" />
-    <Compile Include="Import\Utils\FilteredSortedObservableCollection.cs" />
     <Compile Include="Import\Utils\ImgurHelper.cs" />
-    <Compile Include="Import\Utils\InMemoryByteArrayCache.cs" />
     <Compile Include="Import\Utils\ReflectionExtensions.cs" />
-    <Compile Include="Import\Utils\SortedObservableCollection.cs" />
     <Compile Include="Import\Utils\StringUtils.cs" />
-    <Compile Include="Import\Utils\ThreadSafeFactoryCache.cs" />
-    <Compile Include="Import\Utils\WebUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EventHandlerExtensions.cs" />
     <Compile Include="System\IEnumerableExtensions.cs" />
