@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MasterDevs.Core.Common.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using MasterDevs.Core.Common.Infrastructure;
 
 namespace MasterDevs.Core.Common.Utils
 {
@@ -40,7 +40,7 @@ namespace MasterDevs.Core.Common.Utils
         public FilteredSortedObservableCollection(Func<T, bool> filter, IEnumerable<T> items, IComparer<T> comparer)
             : base(items, comparer)
         {
-            _filter = CodeContract.RequireNotNull(filter, "filter");
+            _filter = filter.RequireNotNull("filter");
 
             _filtered = new SortedObservableCollection<T>(comparer);
             _filterInverted = t => !_filter(t);

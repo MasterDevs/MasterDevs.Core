@@ -1,6 +1,5 @@
-﻿using MasterDevs.Core.Common.Infrastructure;
+﻿using MasterDevs.Core;
 using MasterDevs.Core.Common.Service;
-using System;
 using System.Diagnostics;
 
 namespace System
@@ -11,7 +10,7 @@ namespace System
         public static void SafeCatchInvoke(this Action me, ILogger logger)
         {
             if (null == me) return;
-            CodeContract.RequireNotNull(logger, "logger");
+            logger.RequireNotNull("logger");
 
             try
             {

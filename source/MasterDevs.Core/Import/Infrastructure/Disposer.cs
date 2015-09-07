@@ -8,7 +8,7 @@ namespace MasterDevs.Core.Common.Infrastructure
 
         public Disposer(Action onDispose)
         {
-            _onDispose = CodeContract.RequireNotNull(onDispose, "onDispose");
+            _onDispose = onDispose.RequireNotNull("onDispose");
         }
 
         public void Dispose()

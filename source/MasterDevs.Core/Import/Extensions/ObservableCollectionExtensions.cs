@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MasterDevs.Core.Common.Infrastructure;
+﻿using MasterDevs.Core;
+using System.Collections.Generic;
 
 namespace System.Collections.ObjectModel
 {
@@ -7,8 +7,8 @@ namespace System.Collections.ObjectModel
     {
         public static void AddRange<T>(this ObservableCollection<T> coll, IEnumerable<T> items)
         {
-            CodeContract.RequireNotNull(coll, "coll");
-            CodeContract.RequireNotNull(items, "items");
+            coll.RequireNotNull("coll");
+            items.RequireNotNull("items");
 
             foreach (T item in items)
             {
@@ -18,8 +18,8 @@ namespace System.Collections.ObjectModel
 
         public static void RemoveRange<T>(this ObservableCollection<T> coll, IEnumerable<T> items)
         {
-            CodeContract.RequireNotNull(coll, "coll");
-            CodeContract.RequireNotNull(items, "items");
+            coll.RequireNotNull("coll");
+            items.RequireNotNull("items");
 
             foreach (var item in items)
             {

@@ -1,5 +1,4 @@
-﻿using MasterDevs.Core.Common.Infrastructure;
-using System;
+﻿using System;
 using System.Linq;
 
 namespace MasterDevs.Core.Common.Service
@@ -11,7 +10,7 @@ namespace MasterDevs.Core.Common.Service
 
         public CompoundLogger(params ILogger[] loggers)
         {
-            _loggers = CodeContract.RequireNotNull(loggers, "loggers");
+            _loggers = loggers.RequireNotNull("loggers");
             _type = this.GetType();
         }
 

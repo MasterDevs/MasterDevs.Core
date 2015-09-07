@@ -13,7 +13,7 @@ namespace MasterDevs.Core.Common.Infrastructure
 
         public EasyComparer(Func<T, int> toInt)
         {
-            _toInt = CodeContract.RequireNotNull(toInt, "toInt");
+            _toInt = toInt.RequireNotNull("toInt");
         }
 
         public int Compare(T x, T y)
