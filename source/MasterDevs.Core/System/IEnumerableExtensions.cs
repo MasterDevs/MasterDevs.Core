@@ -40,6 +40,25 @@ namespace System
             return firstOrDefault;
         }
 
+        public static IEnumerable<IEnumerable<T>> GetPages<T>(this IEnumerable<T> source, int pageSize)
+        {
+            if (pageSize < 1) throw new ArgumentOutOfRangeException("pageSize", "pageSize must be greater than zero");
+            int count = 0;
+            while (true)
+            {
+                var sub = source.Skip(count * pageSize).Take(pageSize);
+                if (sub.Any())
+                {
+                    count++;
+                    yield return sub;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+
         public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
         {
             if (source == null) return true;

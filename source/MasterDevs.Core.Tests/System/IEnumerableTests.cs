@@ -133,6 +133,90 @@ namespace MasterDevs.Core.Tests.System
         }
 
         [Test]
+        public void GetPages_CollectionContainsElements_ReturnsCorrectPages()
+        {
+            // Assemble
+            var source = Enumerable.Range(1, 7);
+            var expected0 = new List<int> { 1, 2, 3, 4, 5 };
+            var expected1 = new List<int> { 6, 7 };
+
+            // Act
+            var actual = source.GetPages(5).ToArray();
+
+            // Assert
+            Assert.AreEqual(2, actual.Length, "Incorrect number of pages returned");
+            Assert.AreEqual(expected0, actual[0]);
+            Assert.AreEqual(expected1, actual[1]);
+        }
+
+        [Test]
+        public void GetPages_CollectionSizeDivisibleByPageSize_ReturnsOnlyFullPages()
+        {
+            // Assemble
+            var source = Enumerable.Range(1, 10);
+
+            // Act
+            var actual = source.GetPages(5).ToArray();
+
+            // Assert
+            Assert.AreEqual(2, actual.Length, "Incorrect number of pages returned");
+            Assert.AreEqual(5, actual[0].Count());
+            Assert.AreEqual(5, actual[1].Count());
+        }
+
+        [Test]
+        public void GetPages_CollectionSizeNotDivisibleByPageSize_ReturnsIncompleteFinalPage()
+        {
+            // Assemble
+            var source = Enumerable.Range(1, 7);
+
+            // Act
+            var actual = source.GetPages(5).ToArray();
+
+            // Assert
+            Assert.AreEqual(2, actual.Length, "Incorrect number of pages returned");
+            Assert.AreEqual(5, actual[0].Count());
+            Assert.AreEqual(2, actual[1].Count());
+        }
+
+        [Test]
+        public void GetPages_EmptyCollection_ReturnsEmptyEnumerableOfPages()
+        {
+            // Assemble
+            var source = Enumerable.Empty<int>();
+
+            // Act
+            var actual = source.GetPages(5);
+
+            // Assert
+            CollectionAssert.IsEmpty(actual);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetPages_Null_Throws()
+        {
+            // Assemble
+            IEnumerable<int> source = null;
+
+            // Act
+            source.GetPages(5).ToArray();
+        }
+
+        [Test]
+        [TestCase(0)]
+        [TestCase(-1)]
+        [TestCase(int.MinValue)]
+        public void GetPages_PageSizeTooSmall_Throws(int pageSize)
+        {
+            // Assemble
+            var source = Enumerable.Range(1, 10);
+
+            // Act
+            Assert.Throws<ArgumentOutOfRangeException>(() => source.GetPages(pageSize).ToArray());
+        }
+
+        [Test]
         public void IsNullOrEmpty_IsEmpty_ReturnsTrue()
         {
             // Assemble
