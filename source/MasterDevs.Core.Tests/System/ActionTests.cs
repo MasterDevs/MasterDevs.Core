@@ -67,6 +67,16 @@ namespace MasterDevs.Core.Tests.System
         }
 
         [Test]
+        public void SafeInvoke_ActionIsNull_RunningActionDoesNothing()
+        {
+            // Assemble
+            Action act = null;
+
+            // Act
+            Assert.DoesNotThrow(() => act.SafeInvoke());
+        }
+
+        [Test]
         public void SafeInvoke_ActionRuns_ActionRuns()
         {
             // Assemble
@@ -166,6 +176,20 @@ namespace MasterDevs.Core.Tests.System
         }
 
         [Test]
+        public void ToSafe_ActionIsNotNull_RunningReturnedActionRuns()
+        {
+            // Assemble
+            bool called = false;
+            Action act = () => called = true;
+
+            // Act
+            act.ToSafe()();
+
+            // Assert
+            Assert.IsTrue(called);
+        }
+
+        [Test]
         public void ToSafe_ActionIsNotNull_SameAction()
         {
             // Assemble
@@ -179,19 +203,6 @@ namespace MasterDevs.Core.Tests.System
         }
 
         [Test]
-        public void ToSafe_ActionIsNotNull_RunningReturnedActionRuns()
-        {
-            // Assemble
-            bool called = false;
-            Action act = () => called = true;
-
-            // Act
-            act.ToSafe()();
-
-            // Assert
-            Assert.IsTrue(called);
-        }
-        [Test]
         public void ToSafe_ActionIsNull_ReturnsNonNullAction()
         {
             // Assemble
@@ -202,6 +213,19 @@ namespace MasterDevs.Core.Tests.System
 
             // Assert
             Assert.IsNotNull(actual);
+        }
+
+        [Test]
+        public void ToSafe_ActionIsNull_RunningReturnDoesNothing()
+        {
+            // Assemble
+            Action act = null;
+
+            // Act
+            var actual = act.ToSafe();
+
+            // Assert
+            Assert.DoesNotThrow(() => actual());
         }
 
         [Test]
@@ -228,6 +252,19 @@ namespace MasterDevs.Core.Tests.System
 
             // Assert
             Assert.IsNotNull(actual);
+        }
+
+        [Test]
+        public void ToSafeOneArgument_ActionIsNull_RunningActionDoesNothing()
+        {
+            // Assemble
+            Action<string> act = null;
+
+            // Act
+            var actual = act.ToSafe();
+
+            // Assert
+            Assert.DoesNotThrow(() => actual("hello world"));
         }
     }
 }
