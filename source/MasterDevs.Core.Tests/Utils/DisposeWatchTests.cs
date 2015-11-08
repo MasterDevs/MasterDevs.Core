@@ -39,6 +39,10 @@ namespace MasterDevs.Core.Tests.Utils
             Assert.AreEqual(1, calledCount);
         }
 
+#if DEBUG
+        /// <summary>
+        /// When using the default implementation, nothing is printed out when DEBUG is not defined.
+        /// </summary>
         [Test]
         public void Dispose_MessageSupplied_LogsOutMessage()
         {
@@ -54,16 +58,12 @@ namespace MasterDevs.Core.Tests.Utils
                 // Act
                 watch.Dispose();
 
-                // Clean up
-                Debug.Flush();
-                tw.Flush();
-                listener.Flush();
-                //Debug.Listeners.Remove(listener);
+                // Assert
+                Debug.Listeners.Remove(listener);
+                StringAssert.Contains(message, traces.ToString());
             }
-
-            // Assert
-            StringAssert.Contains(message, traces.ToString());
         }
+#endif
 
         [Test]
         public void Start_NullAction_Throws()
