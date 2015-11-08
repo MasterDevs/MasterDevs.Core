@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MasterDevs.Core.Common.Infrastructure
+namespace MasterDevs.Core.Utils
 {
     public class Disposer : IDisposable
     {
