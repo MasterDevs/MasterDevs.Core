@@ -54,7 +54,7 @@
     <Compile Include="Import\Infrastructure\Disposewatch.cs" />
     <Compile Include="Import\Infrastructure\ImgurHelper.cs" />
     <Compile Include="Import\Infrastructure\ReflectionExtensions.cs" />
-    <Compile Include="Import\Infrastructure\StringUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EventHandlerExtensions.cs" />
     <Compile Include="System\IEnumerableExtensions.cs" />
