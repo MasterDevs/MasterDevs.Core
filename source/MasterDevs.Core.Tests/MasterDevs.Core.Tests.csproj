@@ -57,7 +57,6 @@
     <Compile Include="System\EventHandlerExtensionsTests.cs" />
     <Compile Include="System\IEnumerableTests.cs" />
     <Compile Include="System\IO\StreamExtensionsTests.cs" />
-    <Compile Include="System\Linq\Expressions\ExpressionExtensionsTests.cs" />
     <Compile Include="System\ObjectTests.cs" />
     <Compile Include="System\NullableExtensionsTests.cs" />
     <Compile Include="System\StringExtensionsTests.cs" />
