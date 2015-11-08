@@ -4,7 +4,7 @@
     {
         public static Stream AsStream(this string me)
         {
-            if (string.IsNullOrEmpty(me)) return null;
+            if (me == null) return null;
 
             var stream = new MemoryStream();
             var writer = new StreamWriter(stream);
@@ -16,6 +16,8 @@
 
         public static Stream AsStream(this byte[] me)
         {
+            if (me == null) return null;
+
             return new MemoryStream(me);
         }
 
@@ -35,19 +37,6 @@
             return val;
         }
 
-        public static byte[] ToByteArray(this MemoryStream me, bool disposeStream = true)
-        {
-            if (null == me)
-                return null;
-
-            var result = me.ToArray();
-
-            if (disposeStream)
-                me.Dispose();
-
-            return result;
-        }
-
         public static byte[] ToByteArray(this Stream me)
         {
             if (null == me)
@@ -56,10 +45,11 @@
             if (!me.CanRead)
                 return null;
 
-            var ms = new MemoryStream();
-            me.CopyTo(ms);
-            me.Dispose();
-            return ms.ToArray();
+            using (var ms = new MemoryStream())
+            {
+                me.CopyTo(ms);
+                return ms.ToArray();
+            }
         }
     }
 }
