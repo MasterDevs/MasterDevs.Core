@@ -54,10 +54,14 @@ namespace MasterDevs.Core.Tests.Utils
                 // Act
                 watch.Dispose();
 
-                // Assert
+                // Clean up
+                Debug.Flush();
+                listener.Flush();
                 Debug.Listeners.Remove(listener);
-                StringAssert.Contains(message, traces.ToString());
             }
+
+            // Assert
+            StringAssert.Contains(message, traces.ToString());
         }
 
         [Test]
