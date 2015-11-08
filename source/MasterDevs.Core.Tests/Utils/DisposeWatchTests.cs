@@ -58,7 +58,7 @@ namespace MasterDevs.Core.Tests.Utils
                 Debug.Flush();
                 tw.Flush();
                 listener.Flush();
-                Debug.Listeners.Remove(listener);
+                //Debug.Listeners.Remove(listener);
             }
 
             // Assert
