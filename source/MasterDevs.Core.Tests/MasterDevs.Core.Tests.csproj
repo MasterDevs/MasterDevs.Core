@@ -52,6 +52,7 @@
     <Compile Include="Error\UserVisibleExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EventArgsTests.cs" />
+    <Compile Include="Tasks\AsyncLazyTests.cs" />
     <Compile Include="Utils\DisposerTests.cs" />
     <Compile Include="Utils\DisposeWatchTests.cs" />
     <Compile Include="Utils\EasyComparerTests.cs" />
