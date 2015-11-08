@@ -8,30 +8,46 @@ namespace MasterDevs.Core.Tasks
     /// </summary>
     public class AsyncManualResetEvent
     {
-        private volatile TaskCompletionSource<bool> m_tcs = new TaskCompletionSource<bool>();
-        public Task WaitAsync() { return m_tcs.Task; }
+        private volatile TaskCompletionSource<bool> _tcs = new TaskCompletionSource<bool>();
 
-        public void Set()
-        {
-            var tcs = m_tcs;
-            Task.Factory.StartNew(s => ((TaskCompletionSource<bool>)s).TrySetResult(true),
-                tcs, CancellationToken.None, TaskCreationOptions.PreferFairness, TaskScheduler.Default);
-            tcs.Task.Wait();
-        }
-
+        /// <summary>
+        /// Closes the event
+        /// </summary>
         public void Reset()
         {
-            // This warning is safe to ignore as per the documentation for this warning
-            // http://msdn.microsoft.com/en-us/library/4bw5ewxy(VS.80).aspx 
+            // This warning is safe to ignore in this context as per the documentation for this warning
+            // http://msdn.microsoft.com/en-us/library/4bw5ewxy(VS.80).aspx
 #pragma warning disable 420
             while (true)
             {
-                var tcs = m_tcs;
+                var tcs = _tcs;
                 if (!tcs.Task.IsCompleted ||
-                    Interlocked.CompareExchange(ref m_tcs, new TaskCompletionSource<bool>(), tcs) == tcs)
+                    Interlocked.CompareExchange(ref _tcs, new TaskCompletionSource<bool>(), tcs) == tcs)
+                {
                     return;
+                }
             }
 #pragma warning restore 420
+        }
+
+        /// <summary>
+        /// Opens the event
+        /// </summary>
+        public void Set()
+        {
+            var tcs = _tcs;
+            Task.Factory.StartNew(
+                s => ((TaskCompletionSource<bool>)s).TrySetResult(true),
+                tcs,
+                CancellationToken.None,
+                TaskCreationOptions.PreferFairness,
+                TaskScheduler.Default);
+            tcs.Task.Wait();
+        }
+
+        public Task WaitAsync()
+        {
+            return _tcs.Task;
         }
     }
 }

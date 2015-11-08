@@ -19,6 +19,9 @@ namespace MasterDevs.Core.Tasks
             base(() => Task.Factory.StartNew(() => taskFactory()).Unwrap())
         { }
 
+        /// <summary>
+        /// Called by the compiler, no need to call this manually
+        /// </summary>
         public TaskAwaiter<T> GetAwaiter()
         {
             return Value.GetAwaiter();
