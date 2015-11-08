@@ -48,10 +48,9 @@
     <Compile Include="Utils\Disposer.cs" />
     <Compile Include="Import\Infrastructure\EasyComparer.cs" />
     <Compile Include="System\EventArgs.cs" />
-    <Compile Include="Import\Infrastructure\ExceptionEventArgs.cs" />
     <Compile Include="Import\Infrastructure\AsyncLazy.cs" />
     <Compile Include="Import\Infrastructure\AsyncManualResetEvent.cs" />
-    <Compile Include="Import\Infrastructure\Disposewatch.cs" />
+    <Compile Include="Utils\DisposeWatch.cs" />
     <Compile Include="Import\Infrastructure\ImgurHelper.cs" />
     <Compile Include="Import\Infrastructure\ReflectionExtensions.cs" />
     <Compile Include="Utils\StringUtils.cs" />
