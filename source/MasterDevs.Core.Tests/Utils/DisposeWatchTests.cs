@@ -25,6 +25,21 @@ namespace MasterDevs.Core.Tests.Utils
         }
 
         [Test]
+        public void Dispose_CalledSecondTime_DoesNotInvokeAction()
+        {
+            // Assemble
+            int calledCount = 0;
+            var watch = DisposeWatch.Start(_ => calledCount++);
+
+            // Act
+            watch.Dispose();
+            watch.Dispose();
+
+            // Assert
+            Assert.AreEqual(1, calledCount);
+        }
+
+        [Test]
         public void Dispose_MessageSupplied_LogsOutMessage()
         {
             // Assemble
