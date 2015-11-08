@@ -1,5 +1,4 @@
-﻿using MasterDevs.Core.Common.Infrastructure;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 
 namespace MasterDevs.Core.Tests.System

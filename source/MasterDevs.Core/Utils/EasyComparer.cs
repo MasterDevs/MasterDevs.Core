@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MasterDevs.Core.Common.Infrastructure
+namespace MasterDevs.Core.Utils
 {
     /// <summary>
     /// Simple implementation of an <seealso cref="IComparer"/> which accepts a function on the constructor to convert the <typeparamref name="T"/> to an int
@@ -21,7 +21,7 @@ namespace MasterDevs.Core.Common.Infrastructure
             int xInt = _toInt(x);
             int yInt = _toInt(y);
 
-            return yInt.CompareTo(xInt);
+            return xInt.CompareTo(yInt);
         }
     }
 }

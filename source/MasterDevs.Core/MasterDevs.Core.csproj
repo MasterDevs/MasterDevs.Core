@@ -46,7 +46,7 @@
     <Compile Include="System\StringExtensions.cs" />
     <Compile Include="System\TimeSpanExtensions.cs" />
     <Compile Include="Utils\Disposer.cs" />
-    <Compile Include="Import\Infrastructure\EasyComparer.cs" />
+    <Compile Include="Utils\EasyComparer.cs" />
     <Compile Include="System\EventArgs.cs" />
     <Compile Include="Import\Infrastructure\AsyncLazy.cs" />
     <Compile Include="Import\Infrastructure\AsyncManualResetEvent.cs" />
