@@ -51,6 +51,7 @@
     <Compile Include="CodeContractsTests.cs" />
     <Compile Include="Error\UserVisibleExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\EventArgsTests.cs" />
     <Compile Include="Utils\DisposerTests.cs" />
     <Compile Include="Utils\StringUtilsTests.cs" />
     <Compile Include="System\ActionTests.cs" />

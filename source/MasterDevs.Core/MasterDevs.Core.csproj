@@ -47,7 +47,7 @@
     <Compile Include="System\TimeSpanExtensions.cs" />
     <Compile Include="Utils\Disposer.cs" />
     <Compile Include="Import\Infrastructure\EasyComparer.cs" />
-    <Compile Include="Import\Infrastructure\EventArgs.cs" />
+    <Compile Include="System\EventArgs.cs" />
     <Compile Include="Import\Infrastructure\ExceptionEventArgs.cs" />
     <Compile Include="Import\Infrastructure\AsyncLazy.cs" />
     <Compile Include="Import\Infrastructure\AsyncManualResetEvent.cs" />
