@@ -1,7 +1,7 @@
 ﻿using MasterDevs.Core.Utils;
 using NUnit.Framework;
 
-namespace MasterDevs.Core.Tests
+namespace MasterDevs.Core.Utils.Tests
 {
     [TestFixture]
     public class StringUtilsTests
