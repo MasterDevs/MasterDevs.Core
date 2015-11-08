@@ -57,6 +57,7 @@
     <Compile Include="Utils\DisposerTests.cs" />
     <Compile Include="Utils\DisposeWatchTests.cs" />
     <Compile Include="Utils\EasyComparerTests.cs" />
+    <Compile Include="Utils\ImgurHelperTests.cs" />
     <Compile Include="Utils\StringUtilsTests.cs" />
     <Compile Include="System\ActionTests.cs" />
     <Compile Include="System\ClassExtensionsTests.cs" />

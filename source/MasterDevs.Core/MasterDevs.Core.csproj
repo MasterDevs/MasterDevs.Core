@@ -51,7 +51,7 @@
     <Compile Include="Tasks\AsyncLazy.cs" />
     <Compile Include="Tasks\AsyncManualResetEvent.cs" />
     <Compile Include="Utils\DisposeWatch.cs" />
-    <Compile Include="Tasks\ImgurHelper.cs" />
+    <Compile Include="Utils\ImgurHelper.cs" />
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\EventHandlerExtensions.cs" />
